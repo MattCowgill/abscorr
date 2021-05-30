@@ -67,5 +67,16 @@ if (!include_factor_variants) {
 }
 
 
+# Rename using new conventions: https://github.com/runapp-aus/abscorr/issues/17
+asced_qual <- asced_qual %>%
+  rename(
+    aced_qual_broad = qual1,
+    aced_qual_broad_code = qual1_code,
+    aced_qual_narrow = qual2,
+    aced_qual_narrow_code = qual2_code,
+    aced_qual_detailed = qual3,
+    aced_qual_detailed_code = qual3_code
+  )
+
 # Export
 usethis::use_data(asced_qual, overwrite = TRUE)
